@@ -70,7 +70,7 @@ blogRouter.post('/', async (c) => {
   })
 
 
-  // todo: add pagination ,  
+  // todo: add pagination ,  and zod 
   blogRouter.get('/bulk', async(c) => {
     const body = await c.req.json()
     const prisma = new PrismaClient({
