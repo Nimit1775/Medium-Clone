@@ -1,14 +1,38 @@
+import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
 
 export const Blogs = () => {
-  return (
-    <div>
-      <BlogCard
-      authorName = {"nimit"}
-      title= {"My first blog"}
-      content = {"This is my first blog. I am writing this blog to test the blog card component. I hope it works fine."}
-      publishedDate ={ "2021-09-01" }
-      /> 
-    </div>
-  )
+  return <div>
+          <Appbar/>
+          <div className="flex justify-center">
+
+      <div className=" mx-w-xl  ">
+          <BlogCard
+          authorName = {"Nimit Sodhani"}
+          title= {" How an ugly single page website makes $600 every month withaout affiliate marketing"}
+          content = {"How an ugly single page website makes $600 every month withaout affiliate marketing blog blog blog blog "}
+          publishedDate ={ "2021-09-01" }
+          /> 
+          <BlogCard
+          authorName = {"Nimit Sodhani"}
+          title= {" How an ugly single page website makes $600 every month withaout affiliate marketing"}
+          content = {"How an ugly single page website makes $600 every month withaout affiliate marketing blog blog blog blog "}
+          publishedDate ={ "2021-09-01" }
+          /> 
+          <BlogCard
+          authorName = {"Nimit Sodhani"}
+          title= {" How an ugly single page website makes $600 every month withaout affiliate marketing"}
+          content = {"How an ugly single page website makes $600 every month withaout affiliate marketing blog blog blog blog "}
+          publishedDate ={ "2021-09-01" }
+          /> 
+          <BlogCard
+          authorName = {"Nimit Sodhani"}
+          title= {" How an ugly single page website makes $600 every month withaout affiliate marketing"}
+          content = {"How an ugly single page website makes $600 every month withaout affiliate marketing blog blog blog blog "}
+          publishedDate ={ "2021-09-01" }
+          /> 
+          </div>
+        </div>
+      </div>
+  
 }
