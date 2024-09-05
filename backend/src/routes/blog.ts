@@ -88,28 +88,30 @@ blogRouter.post('/', async (c) => {
 
   // todo: add pagination ,  and zod 
   blogRouter.get('/bulk', async(c) => {
-    const body = await c.req.json()
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL ,
   }).$extends(withAccelerate())
-
-  const blogs = await prisma.blog.findMany( {
-    select :{
-      content : true , 
-      title : true , 
-      id : true  , 
-      author :  {
-        select  : {
-          name  : true  ,
+    try {
+      const blogs = await prisma.blog.findMany({
+        select: {
+          content: true,
+          title: true,
+          id: true,
+          author: {
+            select: {
+              name: true,
+            }
+          }
         }
-      }
+      });
+      return c.json({ blogs });
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      c.status(500);
+      return c.json({ message: 'Internal Server Error' });
     }
-  }) ; 
-      
-    return c.json({
-      blogs , 
-    })
-  })
+  });
+  
   
   blogRouter.get('/:id',  async (c) => {
 
