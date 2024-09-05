@@ -123,7 +123,17 @@ blogRouter.post('/', async (c) => {
   const blog = await prisma.blog.findFirst({
     where : {
       id : Number(id) , 
-    } , 
+    } ,
+    select :{ 
+      title: true  , 
+      content : true , 
+      id : true ,
+      author :{
+        select :{
+          name : true , 
+        }
+      }
+    } 
    
   })
 

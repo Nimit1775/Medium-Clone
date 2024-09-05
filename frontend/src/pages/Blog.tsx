@@ -1,6 +1,13 @@
+import { useBlog } from "../hooks"
 
 export const  Blog= ()=> {
-  return (
-    <div>Blog</div>
-  )
+  
+  const  {loading  , blog } = useBlog()  ;  
+  if(loading) {
+    return <div>Loading...</div>
+  }
+  return  <div>
+    
+  </div>
+
 }
