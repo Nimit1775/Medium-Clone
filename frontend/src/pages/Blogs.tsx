@@ -13,11 +13,12 @@ export const Blogs = () => {
           <Appbar/>
           <div className="flex justify-center">
 
-      <div className=" mx-w-xl  ">
+      <div >
         {blogs.map(blogs =>    <BlogCard
-          authorName = {"Nimit Sodhani"}
-          title= {" How an ugly single page website makes $600 every month withaout affiliate marketing"}
-          content = {"How an ugly single page website makes $600 every month withaout affiliate marketing blog blog blog blog "}
+        id = {blogs.id}
+          authorName = {blogs.author.name || "Anonymous"}
+          title= {blogs.title}
+          content = {blogs.content}
           publishedDate ={ "2021-09-01" }
           /> 
         )}
