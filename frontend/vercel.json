@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      { "source": "/signup", "destination": "/signup" },
+      { "source": "/signin", "destination": "/signin" },
+      { "source": "/blogs", "destination": "/blogs" },
+      { "source": "/blog/:id", "destination": "/blog/:id" },
+      { "source": "/publish", "destination": "/publish" }
+    ],
+    "redirects": [],
+    "headers": []
+  }
+  
