@@ -3,7 +3,7 @@ import axios from "axios";
 import { BACKEND_URL } from "../config";
 
 
-interface Blog  {
+export interface Blog  {
         "content" : string,  
         "title" : string,
         "author" : {
@@ -11,7 +11,7 @@ interface Blog  {
         }
         "id" : number
 }
-export const useBlog = ({id} : {id: number}) => 
+export const useBlog = ({id} : {id: string}) => 
 {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<Blog>();
