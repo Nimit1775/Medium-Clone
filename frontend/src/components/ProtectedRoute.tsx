@@ -6,6 +6,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   if (!token) {
     return <Navigate to="/signup" replace />;
   }
+  else   return <Navigate to="/blogs" replace />;
 
   return children;
 };
