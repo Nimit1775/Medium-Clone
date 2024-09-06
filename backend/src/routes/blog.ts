@@ -146,4 +146,22 @@ blogRouter.post('/', async (c) => {
     return c.json({message : 'error while fetching blog'}) ;
   }
   })
+
+  // Route to delete all blogs
+blogRouter.delete('/test-data', async (c) => {
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+  }).$extends(withAccelerate());
+
+  try {
+    // Delete all blog records
+    await prisma.blog.deleteMany({});
+    return c.json({ message: 'All blogs deleted successfully.' });
+  } catch (error) {
+    console.error("Error deleting blogs:", error);
+    c.status(500);
+    return c.json({ message: 'Internal Server Error' });
+  }
+});
+
  

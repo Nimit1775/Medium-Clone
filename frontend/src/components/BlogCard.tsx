@@ -47,7 +47,7 @@ export const BlogCard = ({
   
 }
 
-function Dot () 
+ export function Dot () 
 {
   return <div className="h-1 w-1 rounded-full bg-slate-800">
 
