@@ -42,7 +42,15 @@ function App() {
         {/* Redirect any other route to /signup */}
         <Route
           path="/"
-          element={<Navigate to="/signup" replace />}
+          // if token then navigate to /blogs else navigate to /signup
+          
+          element={
+            localStorage.getItem('token') ? (
+              <Navigate to="/blogs" replace />
+            ) : (
+              <Navigate to="/signup" replace />
+            )
+          }
         />
       </Routes>
     </BrowserRouter>
