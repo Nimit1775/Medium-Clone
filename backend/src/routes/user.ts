@@ -33,9 +33,11 @@ userRouter.post('/signup', async(c) => {
   } , c.env.JWT_SECRET) ;
   return c.json({message : 'User created successfully' , token  : jwt}) ; 
   } catch (e) {
-    c.status(403)  ; 
-    return c.json({message : 'User already  exists'})  ;
-  }
+  console.error(e); // See the real error in logs
+  c.status(500);
+  return c.json({ message: 'Internal Server Error', error: String(e) });
+}
+
   }) ; 
 
   
@@ -67,10 +69,10 @@ userRouter.post('/signin',async  (c) => {
         id : user.id 
       } , c.env.JWT_SECRET) ;
       return c.json({ message: 'Signin successful', token: jwt });
-    } catch(e) 
-    {
-      console.log(e) ; 
-      c.status(403) ; 
-      return c.json({message : 'Invalid credentials'}) ;
-    }
+    } catch (e) {
+  console.error(e); // See the real error in logs
+  c.status(500);
+  return c.json({ message: 'Internal Server Error', error: String(e) });
+}
+
   }) ; 

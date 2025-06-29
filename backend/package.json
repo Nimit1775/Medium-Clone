@@ -6,13 +6,13 @@
   },
   "dependencies": {
     "@nimitsodhani/medium": "^1.0.0",
-    "@prisma/client": "^5.18.0",
+    "@prisma/client": "^6.10.1",
     "@prisma/extension-accelerate": "^1.1.0",
-    "hono": "^4.5.6",
-    "prisma": "^5.18.0"
+    "hono": "^4.5.6"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240529.0",
+    "prisma": "^6.10.1",
     "wrangler": "^4.22.0"
   }
 }
