@@ -12,4 +12,6 @@ Tech stack :-
 - Postgres as the database
 - jwt for authentication
 
+LIVE LINK = https://medium-clone-flame-five.vercel.app
+
 
